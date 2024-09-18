@@ -1,0 +1,2 @@
+make it so when they reg a user it will be saved
+make it so when a user regs they will see what department they are in. /
