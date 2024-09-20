@@ -15,7 +15,6 @@ public class payroll {
         String name = New_scanner1.nextLine();
         System.out.print("age: ");
         int age;
-        int Phone_number;
         while (!T_f) {
             if (New_scanner1.hasNextInt()) {
                 System.out.println("number!");
@@ -24,6 +23,18 @@ public class payroll {
             } else {
                 New_scanner1.next();
                 System.out.println("Number only");
+                continue;
+            }
+        }
+        System.out.print("Phone Number: ");
+        int pnmb;
+        New_scanner1.next();
+        while (!T_f) {
+            if (New_scanner1.hasNextInt()) {
+                break;
+            } else {
+                New_scanner1.next();
+                System.out.println("Please enter a valid number.");
                 continue;
             }
         }
