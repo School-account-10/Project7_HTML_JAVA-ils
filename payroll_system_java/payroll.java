@@ -15,18 +15,17 @@ public class payroll {
         String name = New_scanner1.nextLine();
         System.out.print("age: ");
         int age;
+        int Phone_number;
         while (!T_f) {
             if (New_scanner1.hasNextInt()) {
-                System.out.println("printing here1");
+                System.out.println("number!");
                 break;
 
             } else {
                 New_scanner1.next();
-                System.out.println("printing here2");
+                System.out.println("Number only");
                 continue;
-            } if (new);
-
+            }
         }
-
     }
 }
