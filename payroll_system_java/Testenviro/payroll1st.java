@@ -38,6 +38,7 @@ public class payroll1st {
                 if (RMrfdepartment <= Listofdepartment.size()) {
                     if (RMrfdepartment == 0) {
                         System.out.println("okay!"); // lazy asf wtf????
+                        System.out.println(RMrfdepartment);
                         break;
 
                     }
@@ -58,6 +59,7 @@ public class payroll1st {
                 System.out.print("How many departments: ");
                 continue;
             }
+            
         }
 
     }
