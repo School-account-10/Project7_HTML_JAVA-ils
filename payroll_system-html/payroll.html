@@ -3,14 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Payout System</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <!-- Fonts -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
   </head>
   <body>
-    <header><h1>Developer Payout System</h1></header>
-    <div id="Ask_Page">
-      <p class="test">testing page again</p>
-    </div>
+    <p style="font-family: Noto Serif, serif;">Current Progress:</p>
+    <progress value="4" max="100"></progress>
+    <center>
+    <h1>Developer Payout System</h1>
+    <SVG height="170">
+      <rect class="drop_shad" width="220" height="160" x="20" fill="white" stroke="black" stroke-width=".2"
+    rx="10" ry="10"></rect>
+    <!-- Inner Payouts; This is where the selection of currency goes. This is optional.-->
+
+    <!-- Dollar Currency -->
+    <a href="payout.html">
+      <SVG>
+        <rect class="hver_class" width="199" height="40" x="30" y="10" fill="white" stroke="black" stroke-width=".2"
+    rx="10" ry="10"></rect>
+    <text x="130" y="36" fill="black" font-family="Noto Serif, serif" font-size="16" text-anchor="middle"> $ </text>
+      </SVG>
+    </a>
+
+    <!-- Peso Currency -->
+    <a href="payout.html">
+      <SVG>
+        <rect class="hver_class" width="199" height="40" x="30" y="60" fill="white" stroke="black" stroke-width=".2"
+    rx="10" ry="10"></rect>
+    <text x="130" y="86" fill="black" font-family="Noto Serif, serif" font-size="16"  text-anchor="middle"> ₱ </text>
+      </SVG>
+    </a>
+
+    <!-- Yen Currency -->
+
+    <a href="payout.html">
+      <SVG>
+        <rect class="hver_class" width="199" height="40" x="30" y="110" fill="white" stroke="black" stroke-width=".2"
+    rx="10" ry="10"></rect>
+    <text x="130" y="136" fill="black" font-family="Noto Serif, serif" font-size="16"  text-anchor="middle"> ¥ </text>
+      </SVG>
+    </a>
+
+    </SVG>
+  </center>
   </body>
 </html>
