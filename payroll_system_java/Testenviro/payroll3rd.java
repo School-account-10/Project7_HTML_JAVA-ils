@@ -1,6 +1,7 @@
 package Testenviro;
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.random.*;
 import java.util.ArrayList;
@@ -9,7 +10,8 @@ import java.util.Arrays;
 public class payroll3rd {
     public static void main(String[] args) {
         boolean tr_fl = false; // true and false current value false
-
+        Random department_picker = new Random();
+        string newvalue1;
         Scanner new_scanner1 = new Scanner(System.in);
         ArrayList<String> Listofdepartment = new ArrayList<String>();
         Listofdepartment.add("Human Resources");
@@ -32,22 +34,12 @@ public class payroll3rd {
                 System.out.println("Numbers Only Please try again");
                 System.out.print("How many departments Do You Want to create: ");
                 continue;
-
             }
-            if (Listofdepartment.size() < department1) {
-                System.out.println("bigger than list selected please try again ");
-                System.out.print("How many departments Do You Want to create: ");
-            } else {
-                System.out.println("working ");
-                for(counter1 = 0; counter1 < department1; counter1++){
-                Listofdepartment.remove(Listofdepartment.size() -1 );
-                System.out.println(Listofdepartment.get(counter1));
-                }
+            for (int i = 0; i < department1; i++) {
                 
             }
-
+            
         }
-        
 
     }
 }
