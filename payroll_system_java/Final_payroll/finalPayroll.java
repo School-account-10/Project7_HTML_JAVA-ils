@@ -1,13 +1,11 @@
-package Testenviro;
+package Final_payroll;
 
-import java.util.InputMismatchException;
-import java.util.Random;
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
-public class payroll3rd {
-    public static void main(String[] args) {
+public class finalPayroll{
+     public static void main(String[] args) {
         boolean tr_fl = false; // true and false current value false
         //Random department_picker = new Random();
         Scanner new_scanner1 = new Scanner(System.in);
@@ -36,7 +34,6 @@ public class payroll3rd {
             for (int i = 0; i < department1; i++) {;
                 
                
-
                
 
             }
