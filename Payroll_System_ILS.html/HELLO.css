@@ -11,10 +11,15 @@ body {
 }
 
 body {  /* fix this franz */
-   background-image: url('GA45_Gura.png');
+   background-image:url('images/GA45_Gura.png');
    background-repeat: no-repeat;
    background-position: center;
-   max-width: 100%;
+   background-size: cover;
+   
+
+
+   
+  
 }
 
 
