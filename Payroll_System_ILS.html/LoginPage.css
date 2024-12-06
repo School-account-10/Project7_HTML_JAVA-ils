@@ -22,10 +22,17 @@ body {
     text-align: center;
 }
 
-.LOGIN h2 {
-    margin-bottom: 35px;
-    color: #333;
-    font-size: 28px;
+.SELECTION {
+    display: none; /* Hidden initially */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Space between heading and choices */
+    height: 100%;
+    position: relative;
+    transform: translateY(50px); /* Start slightly below */
+    opacity: 0;
+    color: #000000; /* Text color for the question */
 }
 
 .BOXFORTEXT {
@@ -48,7 +55,7 @@ button {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 button:hover {
@@ -62,14 +69,123 @@ button:hover {
     border-color: #cae0f6;
 }
 
+/* Effects Tab */
+
+.fade-in {
+    opacity: 1;
+    transform: scale(1);
+    animation: fade-in 1s ease forwards;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0);
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* SELECTION div styling */
+
+/* Move up animation */
+.move-up {
+    animation: move-up 1s ease forwards;
+}
+
+@keyframes move-up {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Choice boxes styling */
+.choices {
+    display: flex;
+    gap: 20px;
+}
+
+.choice-box {
+    width: 150px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* White background for boxes */
+    color: #007BFF; /* Blue text */
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+}
+
+.choice-box:hover {
+    background-color: #f0f0f0; /* Slightly lighter shade on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
 
 
+/* New form styles */
+.FORM {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 35px 47px;
+    width: 450px;
+    text-align: center;
+    margin: auto;
+}
 
+.FORM h2 {
+    margin-bottom: 35px;
+    color: #333;
+    font-size: 28px;
+}
 
+.FORM .BOXFORTEXT {
+    margin-bottom: 22px;
+    text-align: left;
+}
 
+.FORM .BOXFORTEXT label {
+    display: block;
+    font-size: 19px;
+    margin-bottom: 9px;
+    color: #555;
+}
 
+.FORM button {
+    width: 100%;
+    padding: 17px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px; 
+}
 
+.FORM button:hover {
+    background-color: #0056b3;
+}
 
-
-
+.FORM .INPUT {
+    width: 100%;
+    height: 54.5px;
+    border-radius: 10px;
+    border-color: #cae0f6;
+}
 
