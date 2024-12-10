@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class Payroll {
 
+  // i would like to thank stackoverflow and discord people for the help on this prject
+
   public static void main(String[] args) {
     Scanner departments = new Scanner(System.in);
     int max_size = 10;
@@ -45,11 +47,14 @@ public class Payroll {
       departmentfolders(deptName);
     }
 
-    askemp(departmentArrayLists); // Keep this method as the only one asking for full/part time info
-    writeall(departmentArrayLists); // Write all employee data to files
+    askemp(departmentArrayLists);
+    writeall(departmentArrayLists);
   }
 
-  public static void departmentMaker(String deptName, ArrayList<String> deptList) {
+  public static void departmentMaker(
+    String deptName,
+    ArrayList<String> deptList
+  ) {
     deptList.add(deptName);
   }
 
@@ -62,7 +67,9 @@ public class Payroll {
     if (!dir.exists()) {
       boolean result = dir.mkdir();
       if (result) {
-        System.out.println("Directory '" + deptName + "' created successfully.");
+        System.out.println(
+          "Directory '" + deptName + "' created successfully."
+        );
       } else {
         System.out.println("Failed to create directory '" + deptName + "'.");
       }
@@ -102,7 +109,7 @@ public class Payroll {
       }
     }
 
-    Askinfo.nextLine(); // Consume newline after nextInt
+    Askinfo.nextLine();
 
     System.out.print("Home Address: ");
     String address = Askinfo.nextLine();
@@ -118,7 +125,9 @@ public class Payroll {
         System.out.print("Select a department by number: ");
         departmentChoice = Askinfo.nextInt();
 
-        if (departmentChoice < 1 || departmentChoice > departmentArrayLists.size()) {
+        if (
+          departmentChoice < 1 || departmentChoice > departmentArrayLists.size()
+        ) {
           throw new IllegalArgumentException("Invalid department selection.");
         }
         break;
@@ -131,7 +140,6 @@ public class Payroll {
       }
     }
 
-    // Ask whether full-time or part-time, and calculate salary
     Scanner input = new Scanner(System.in);
     boolean validInput = false;
     boolean isFullTime = false;
@@ -177,23 +185,42 @@ public class Payroll {
       System.out.println("Overtime Pay: " + overtimePay);
     }
 
-    double salaryAfterTax = salary - (salary * 0.14 + salary * 0.04 + salary * 0.07);
+    double salaryAfterTax =
+      salary - (salary * 0.14 + salary * 0.04 + salary * 0.07);
 
-    String employeeInfo = "Name: " + name + ", Age: " + age + ", Phone: " + phoneNumber + ", Address: " + address +
-                          ", Employment Type: " + employmentType + ", Salary Before Tax: " + salary + ", Salary After Tax: " + salaryAfterTax;
+    String employeeInfo =
+      "Name: " +
+      name +
+      ", Age: " +
+      age +
+      ", Phone: " +
+      phoneNumber +
+      ", Address: " +
+      address +
+      ", Employment Type: " +
+      employmentType +
+      ", Salary Before Tax: " +
+      salary +
+      ", Salary After Tax: " +
+      salaryAfterTax;
 
-    ArrayList<String> selectedDeptList = departmentArrayLists.get(departmentChoice - 1);
+    ArrayList<String> selectedDeptList = departmentArrayLists.get(
+      departmentChoice - 1
+    );
     selectedDeptList.add(employeeInfo);
 
     System.out.println("Employee added to " + selectedDeptList.get(0));
     System.out.println("Updated Department Details: " + selectedDeptList);
   }
 
-  public static void writeall(ArrayList<ArrayList<String>> departmentArrayLists) {
+  public static void writeall(
+    ArrayList<ArrayList<String>> departmentArrayLists
+  ) {
     for (ArrayList<String> department : departmentArrayLists) {
       String departmentName = department.get(0);
       String currentDir = System.getProperty("user.dir");
-      String departmentFolderPath = currentDir + File.separator + departmentName;
+      String departmentFolderPath =
+        currentDir + File.separator + departmentName;
       File departmentFolder = new File(departmentFolderPath);
       if (!departmentFolder.exists()) {
         departmentFolder.mkdir();
@@ -213,9 +240,12 @@ public class Payroll {
           String salaryBeforeTax = infoParts[5].split(":")[1].trim();
           String salaryAfterTax = infoParts[6].split(":")[1].trim();
 
-          String fileName = departmentFolderPath + File.separator + name + ".txt";
+          String fileName =
+            departmentFolderPath + File.separator + name + ".txt";
 
-          try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+          try (
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))
+          ) {
             writer.write("Employee Name: " + name);
             writer.newLine();
             writer.write("Age: " + age);
@@ -233,7 +263,9 @@ public class Payroll {
             writer.write("=================================");
             writer.newLine();
             writer.newLine();
-            System.out.println("Data for " + name + " written to file: " + fileName);
+            System.out.println(
+              "Data for " + name + " written to file: " + fileName
+            );
           } catch (IOException e) {
             System.err.println("Error writing to file: " + fileName);
             e.printStackTrace();
