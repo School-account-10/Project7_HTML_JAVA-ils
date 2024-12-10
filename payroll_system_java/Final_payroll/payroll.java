@@ -10,7 +10,7 @@ public class Payroll {
     int max_size = 10;
     boolean t_f = false;
     int Userval = 0;
-
+    
     ArrayList<ArrayList<String>> departmentArrayLists = new ArrayList<>(); 
 
     while (!t_f) {
@@ -43,6 +43,7 @@ public class Payroll {
     }
 
     askemp(departmentArrayLists); 
+    partimeornot();
   }
 
   public static void departmentMaker(String deptName, ArrayList<String> deptList) {
@@ -75,7 +76,7 @@ public class Payroll {
     System.out.println("Employee Information");
     System.out.print("Name: ");
     String name = Askinfo.nextLine();
-
+    int phoneNumber =0;
     int min_age = 18;
     int age = 0;
 
@@ -87,6 +88,8 @@ public class Payroll {
         if (age < min_age) {
           throw new IllegalArgumentException("Too young to get a job");
         }
+        System.out.print("Phone Number: ");
+        phoneNumber = Askinfo.nextInt();
         t_f = true;
       } catch (InputMismatchException e) {
         System.out.println("Try again");
@@ -97,8 +100,7 @@ public class Payroll {
       }
     }
 
-    System.out.print("Phone Number: ");
-    int phoneNumber = Askinfo.nextInt();
+   
 
     Askinfo.nextLine();
 
@@ -138,6 +140,77 @@ public class Payroll {
     System.out.println("Updated Department Details: " + selectedDeptList);
   }
   public static void partimeornot(){
-    
+      Scanner input = new Scanner(System.in);
+      boolean validInput = false;
+      boolean isFullTime = false;
+      double salary = 0;
+  
+      while (!validInput) {
+          System.out.print("Is the employee Full-time or Part-time? (full/part): ");
+          String response = input.nextLine().trim().toLowerCase();
+  
+          if (response.equals("full")) {
+              isFullTime = true;
+              validInput = true;
+          } else if (response.equals("part")) {
+              isFullTime = false;
+              validInput = true;
+          } else {
+              System.out.println("Invalid input. Please enter 'full' or 'part'.");
+          }
+      }
+  
+      while (!validInput) {
+        System.out.print("Is the employee Full-time or Part-time? (full/part): ");
+        String response = input.nextLine().trim().toLowerCase();
+
+        if (response.equals("full")) {
+            isFullTime = true;
+            validInput = true;
+        } else if (response.equals("part")) {
+            isFullTime = false;
+            validInput = true;
+        } else {
+            System.out.println("Invalid input. Please enter 'full' or 'part'.");
+        }
+    }
+
+    if (isFullTime) {
+      System.out.print("Enter Basic Salary: ");
+      salary = input.nextDouble();
+      System.out.println("Full-time Salary: " + salary);
+  } else {
+      System.out.print("Enter Rate per Hour: ");
+      double ratePerHour = input.nextDouble();
+
+      System.out.print("Enter Work Days: ");
+      int workDays = input.nextInt();
+
+      System.out.print("Enter Overtime Hours: ");
+      int overtimeHours = input.nextInt();
+
+      
+      double basicPay = ratePerHour * workDays * 8;
+      double overtimePay = ratePerHour * (overtimeHours * 1.25);
+      salary = basicPay + overtimePay;
+
+      System.out.println("Part-time Salary Details:");
+      System.out.println("Basic Pay: " + basicPay);
+      System.out.println("Overtime Pay: " + overtimePay);
+      System.out.println("Without Tax deduct: " + salary);
+      }
+ taxreduc(salary);
+  }
+    public static void taxreduc(double salary) {
+     
+      double sssDeduction = salary * 0.14;
+      double pagibigDeduction = salary * 0.04;
+      double philHealthDeduction = salary * 0.07;
+  
+      
+      double totalDeductions = sssDeduction + pagibigDeduction + philHealthDeduction;
+  
+      double netSalary = salary - totalDeductions;
+      System.out.println("With tax deduct: "+ netSalary);
   }
 }
