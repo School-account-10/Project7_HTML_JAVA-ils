@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Shark-In</title>
+    <link rel="stylesheet" href="LoginPage.css" />
+    <link
+        rel="icon"
+        href="https://upload.wikimedia.org/wikipedia/en/3/3d/480px-Gawr_Gura_-_Portrait_01.png" />
+</head>
+<body>
+    <div class="LOGIN">
+        <h2>Login</h2>
+        <form>
+            <div class="BOXFORTEXT">
+                <label for="username"> Employee's Name: </label>
+                <input class="INPUT" type="text" id="username" name="username" required />
+            </div>
+            <div class="BOXFORTEXT">
+                <label for="age"> Age: </label>
+                <input class="INPUT" type="number" id="age" name="age" required />
+            </div>
+            <div class="BOXFORTEXT">
+                <label for="contactnumber"> Contact Number: </label>
+                <input class="INPUT" type="number" id="contactnumber" name="contactnumber" required />
+            </div>
+            <div class="BOXFORTEXT">
+                <label for="address"> Address: </label>
+                <input class="INPUT" type="text" id="address" name="address" required />
+            </div>
+            <div class="BOXFORTEXT">
+                <label for="department"> Department: </label>
+                <input class="INPUT" type="text" id="department" name="department" required />
+            </div>
+            <!-- Set the button type to "button" -->
+            <button type="button" id="Sign-in-button">Sign-in</button>
+        </form>
+    </div>
+
+    <div class="SELECTION">
+        <h2>Are you a full-time or part-time employee?</h2>
+        <div class="choices">
+            <div class="choice-box" id="full-time">Full-time</div>
+            <div class="choice-box" id="part-time">Part-time</div>
+        </div>
+    </div>
+
+    <div class="FORM" id="full-time-form" style="display: none;">
+        <h2>Full-time Employee Details</h2>
+        <form>
+            <div class="BOXFORTEXT">
+                <label for="basic-salary">Basic Salary: </label>
+                <input class="INPUT" type="number" id="basic-salary" name="basic-salary" required />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="FORM" id="part-time-form" style="display: none;">
+        <h2>Part-time Employee Details</h2>
+        <form>
+            <div class="BOXFORTEXT">
+                <label for="rate-per-hour">Rate per Hour: </label>
+                <input class="INPUT" type="number" id="rate-per-hour" name="rate-per-hour" required />
+            </div>
+            <div class="BOXFORTEXT">
+                <label for="work-days">Work Days: </label>
+                <input class="INPUT" type="number" id="work-days" name="work-days" required />
+            </div>
+            <div class="BOXFORTEXT">
+                <label for="overtime">Overtime: </label>
+                <input class="INPUT" type="number" id="overtime" name="overtime" required />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="LoginPage.js"></script>
+</body>
+</html>

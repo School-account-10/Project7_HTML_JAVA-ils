@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title> SharkPay </title>
+        <link rel="stylesheet" href="Payroll.css">
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/3/3d/480px-Gawr_Gura_-_Portrait_01.png">
+  
+    </head>
+        <body>
+            <div class="FORMBOX">
+            <h1>Payroll System</h1>
+        
+            <form>
+            
+                <div class="GROUP">
+                    <label for="employmentType">Employment Type:</label>
+                    <select id="employmentType" name="employmentType" required>
+                        <option value=""> Employee Type </option>
+                        <option value="full-time">Full-time</option>
+                        <option value="part-time">Part-time</option>
+                    </select>
+                </div>
+            
+                <div class="GROUP">
+                    <label for="basicSalary">Basic Salary:</label>
+                    <input type="number" id="basicSalary" name="basicSalary" placeholder="Enter basic salary">
+                </div>
+            
+                <div class="GROUP">
+                    <label for="ratePerHour">Rate per Hour:</label>
+                    <input type="number" id="ratePerHour" name="ratePerHour" placeholder="Enter rate per hour">
+                </div>
+            
+                <div class="GROUP">
+                    <label for="workDays">Number of Work Days:</label>
+                    <input type="number" id="workDays" name="workDays" placeholder="Enter work days">
+                </div>
+            
+                <div class="GROUP">
+                    <label for="overtime">Overtime Hours:</label>
+                    <input type="number" id="overtime" name="overtime" placeholder="Enter overtime hours">
+                </div>
+            
+                <button type="submit">Submit Employee</button>
+            </form>
+
+        </div>
+    </body>
+</html>
